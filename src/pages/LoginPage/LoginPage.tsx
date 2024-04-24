@@ -25,8 +25,8 @@ const loginFormSchema = yup.object({
 })
 
 const mockUser = {
-	mail: 'string@mail.com',
-	phone_number: '123456',
+	mail: 'alex123@mail.ru',
+	password: '12345678ll',
 	user_id: 1,
 	name: 'Vasya',
 	reg_date: new Date().toISOString(),
@@ -48,11 +48,19 @@ export const LoginPage = () => {
 	const user = useSelector((state: RootState) => state.userSlice.user)
 
 	const onLoginFormSubmit: SubmitHandler<ILoginForm> = data => {
-		if (data) {
+		// if (data) {
+		// 	navigate('/main')
+		// } else {
+		// 	navigate('/')
+		// }
+
+		if (data.useremail == mockUser.mail && data.userpassword == '12345678ll') {
 			navigate('/main')
 		} else {
 			navigate('/')
+			alert('Неверные данные')
 		}
+
 		console.log('USER: ', user)
 
 		dispatch(changeUser(mockUser))
@@ -91,7 +99,8 @@ export const LoginPage = () => {
 				/>
 				<div className='RememberAdmin'>
 					<label>
-						<AppInput type={'checkbox'} placeholder={'Запомнить'} />Запомнить
+						<AppInput type={'checkbox'} placeholder={'Запомнить'} />
+						Запомнить
 					</label>
 					<Link to='#'>Забыли пароль?</Link>
 				</div>
