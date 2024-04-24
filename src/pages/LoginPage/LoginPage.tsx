@@ -48,12 +48,6 @@ export const LoginPage = () => {
 	const user = useSelector((state: RootState) => state.userSlice.user)
 
 	const onLoginFormSubmit: SubmitHandler<ILoginForm> = data => {
-		// if (data) {
-		// 	navigate('/main')
-		// } else {
-		// 	navigate('/')
-		// }
-
 		if (data.useremail == mockUser.mail && data.userpassword == '12345678ll') {
 			navigate('/main')
 		} else {
