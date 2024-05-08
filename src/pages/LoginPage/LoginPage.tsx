@@ -55,8 +55,6 @@ export const LoginPage = () => {
 			alert('Неверные данные')
 		}
 
-		console.log('USER: ', user)
-
 		dispatch(changeUser(mockUser))
 	}
 
