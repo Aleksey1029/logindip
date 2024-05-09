@@ -26,7 +26,7 @@ export const ProfileHeader = () => {
 	return (
 		<div className='ProfileHeader'>
 			<div className='user__block'>
-				<img src='./img/users/denis-frolov.jpeg' alt='alex' />
+				<img src='./img/users/balle.jpg' alt='alex' />
 				<div className='user__description'>
 					<h1 className='user__name'>{user?.name}</h1>
 					<div className='user__info'></div>
