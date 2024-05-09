@@ -30,6 +30,29 @@
 		}
 	}
 
+
+	.profile-wrapper span {
+		font-size: 16px;
+		text-decoration: none;
+		color: #a497f9;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	.profile-wrapper span:hover {
+		font-size: 16px;
+		text-decoration: none;
+		color: #a497f9;
+	    
+	}
+
+	.input-wrapper {
+		color: cornflowerblue;
+		font-size: 16px;
+		cursor: pointer;
+	}
+
+
+
 	.Logo_football {
 		width: 208px;
 		transition: 200ms;
@@ -94,7 +117,7 @@
 }
 
 .profile-wrapper {
-	flex: 0 1 auto;
+	// flex: 0 1 auto;
 
 	display: flex;
 	align-items: center;

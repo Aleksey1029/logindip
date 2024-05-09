@@ -22,11 +22,12 @@ export const SCMainPage = styled.div`
 			margin-bottom: 20px;
 			color: #2e6bff;
 			text-align: center;
-			font-family: 'Arial', sans-serif; /* Возвращаем обратно шрифт */
+			font-family: 'Arial', sans-serif;
 		}
 
 		.match-card {
 			display: flex;
+			flex-wrap: wrap; /* Добавляем wrap для адаптивности */
 			align-items: center;
 			justify-content: space-between;
 			background-color: #fff;
@@ -35,10 +36,16 @@ export const SCMainPage = styled.div`
 			margin-bottom: 20px;
 			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 			transition: all 0.3s ease;
+			cursor: pointer;
 
 			&:hover {
 				transform: translateY(-3px);
 				box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+			}
+
+			.buton {
+				border-radius: 5px;
+				font-size: 15px; 
 			}
 
 			.team {
@@ -60,18 +67,33 @@ export const SCMainPage = styled.div`
 				p {
 					font-size: 18px;
 					font-weight: bold;
-					/* background-color: #2e6bff; */
 					color: #000;
 					padding: 8px 12px;
 					border-radius: 20px;
 					border: 1px solid gray;
-					font-family: 'Arial', sans-serif; /* Возвращаем обратно шрифт */
+					font-family: 'Arial', sans-serif;
+					transition: all 0.3s ease; /* Добавляем transition */
+				}
+
+				span {
+					font-size: 18px;
+					font-weight: bold;
+					color: white;
+					padding: 8px 12px;
+					border-radius: 20px;
+					border: 1px solid gray;
+					font-family: 'Arial', sans-serif;
+					transition: all 0.3s ease; /* Добавляем transition */
 				}
 
 				p:hover {
-					background-color: #2e6bff; /* Цвет при наведении */
-					color: #fff;
+					color: white;
+					background-color: #2e6bff;
 					border: none;
+				}
+
+				span:hover {
+					color: white;
 				}
 
 				&:hover {
@@ -90,7 +112,7 @@ export const SCMainPage = styled.div`
 				p {
 					font-size: 16px;
 					color: #666;
-					font-family: 'Arial', sans-serif; /* Возвращаем обратно шрифт */
+					font-family: 'Arial', sans-serif;
 				}
 			}
 		}
@@ -113,11 +135,24 @@ export const SCMainPage = styled.div`
 						height: 40px;
 					}
 
-					p {
+					p,
+					span {
 						font-size: 16px;
 					}
 				}
 			}
+		}
+	}
+
+	@media (max-width: 1084px) {
+		.goals-1 {
+			display: none;
+		}
+	}
+
+	@media (min-width: 1085px) {
+		.goals-2 {
+			display: none;
 		}
 	}
 `

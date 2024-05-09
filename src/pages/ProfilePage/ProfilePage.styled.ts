@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
 export const SCProfilePage = styled.div`
-  display: grid;
-  grid-template-areas:
-    "L P P"
-    "L M R";
-  grid-template-columns: minmax(300px, 360px) auto minmax(300px, 360px);
   gap: 30px;
 
   .LeftSide {

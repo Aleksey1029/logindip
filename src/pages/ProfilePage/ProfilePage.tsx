@@ -1,4 +1,3 @@
-import { Bio } from "../../components/Bio/Bio";
 import { ProfileHeader } from "../../components/ProfileHeader/Profileheader";
 import { Header } from "../../components/UI/Header/Header";
 import { UserPosts } from "../../components/UserPosts/UserPosts";
@@ -14,11 +13,8 @@ export const ProfilePage = () => {
       </aside>
       <ProfileHeader />
       <main className="Main">
-        <WhatsNew />
-        <UserPosts />
       </main>
       <aside className="RightSide">
-        <Bio />
       </aside>
       </SCProfilePage>
   );

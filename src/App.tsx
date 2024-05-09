@@ -1,33 +1,24 @@
-import { LoginPage } from "./pages/LoginPage/LoginPage";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { MainPage } from "./pages/MainPage/MainPage";
-import { ProfilePage } from "./pages/ProfilePage/ProfilePage";
-
-const routerConfig = createBrowserRouter([
-  {
-    path: "/",
-    element: <LoginPage/>
-  },
-  {
-    path: "/main",
-    element: <MainPage/>
-  },
-  {
-    path: "/profile",
-    element: <ProfilePage/>
-  },
-]);
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { LoginPage } from './pages/LoginPage/LoginPage'
+import { MainPage } from './pages/MainPage/MainPage'
+import { ProfilePage } from './pages/ProfilePage/ProfilePage'
+import { DetailsPage } from './pages/DetailsPage/DetailsPage'
 
 function App() {
-  return (
-    <>
-      <div className="App">
-        <div className="container">
-          <RouterProvider router={routerConfig}/>
-        </div>
-      </div>
-    </>
-  );
+	return (
+		<div className='App'>
+			<div className='container'>
+				<BrowserRouter>
+					<Routes>
+						<Route path='/' element={<LoginPage />} />
+						<Route path='/main' element={<MainPage />} />
+						<Route path='/profile' element={<ProfilePage />} />
+						{/* <Route path='/details/:id' element={<DetailsPage />} /> */}
+					</Routes>
+				</BrowserRouter>
+			</div>
+		</div>
+	)
 }
 
-export default App;
+export default App
