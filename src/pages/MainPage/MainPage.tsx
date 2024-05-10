@@ -16,10 +16,26 @@ export const MainPage = () => {
 		}
 	}
 
-	const addToFavorites = match => {
+	const isMatchInFavorites = (match) => {
 		const favorites = JSON.parse(localStorage.getItem('favorites') || '[]')
-		favorites.push(match)
-		localStorage.setItem('favorites', JSON.stringify(favorites))
+		return favorites.some(favoriteMatch => favoriteMatch.id === match.id)
+	}
+
+	const toggleFavorite = (match) => {
+		const favorites = JSON.parse(localStorage.getItem('favorites') || '[]')
+		const isMatchFavorite = isMatchInFavorites(match)
+
+		if (isMatchFavorite) {
+			// Удаляем матч из избранного
+			const updatedFavorites = favorites.filter(
+				favoriteMatch => favoriteMatch.id !== match.id
+			)
+			localStorage.setItem('favorites', JSON.stringify(updatedFavorites))
+		} else {
+			// Добавляем матч в избранное
+			favorites.push(match)
+			localStorage.setItem('favorites', JSON.stringify(favorites))
+		}
 	}
 
 	return (
@@ -81,8 +97,10 @@ export const MainPage = () => {
 										{match.goals.away}
 									</span>
 								</div>
-								<button className='buton' onClick={() => addToFavorites(match)}>
-									В избранное
+								<button className='buton' onClick={() => toggleFavorite(match)}>
+									{isMatchInFavorites(match)
+										? 'Удалить из избранного'
+										: 'Добавить в избранное'}
 								</button>
 							</div>
 						</div>
