@@ -1,3 +1,3 @@
 export const baseUrl = 'https://api-football-beta.p.rapidapi.com/'
-export const apihost = 'api-football-beta.p.rapidapi.com'
-export const apikey = '9509840857msh1d789deeb9626c6p105f11jsn76af59593292'
+export const apihost = 'api-football-v1.p.rapidapi.com'
+export const apikey = '97daaa2a00msh498c4392fa09b1bp123e71jsnfcd6c5852bec'
